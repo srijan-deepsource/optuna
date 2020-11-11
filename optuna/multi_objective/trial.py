@@ -285,7 +285,7 @@ class FrozenMultiObjectiveTrial(object):
 
             step = key // n_objectives - 1
             if step not in intermediate_values:
-                intermediate_values[step] = list(None for _ in range(n_objectives))
+                intermediate_values[step] = [None for _ in range(n_objectives)]
 
             intermediate_values[step][key % n_objectives] = value
         self.intermediate_values = {k: tuple(v) for k, v in intermediate_values.items()}
