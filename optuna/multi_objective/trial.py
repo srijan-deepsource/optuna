@@ -358,7 +358,7 @@ class FrozenMultiObjectiveTrial(object):
         if values0 == values1:
             return False
 
-        return all([v0 <= v1 for v0, v1 in zip(values0, values1)])
+        return all(v0 <= v1 for v0, v1 in zip(values0, values1))
 
     def __eq__(self, other: Any) -> bool:
         if not isinstance(other, FrozenMultiObjectiveTrial):
