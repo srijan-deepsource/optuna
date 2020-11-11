@@ -84,7 +84,7 @@ def test_create_new_study_unique_id(storage_mode: str) -> None:
         study_id3 = storage.create_new_study()
 
         # Study id must not be reused after deletion.
-        if not (isinstance(storage, RDBStorage) or isinstance(storage, _CachedStorage)):
+        if not isinstance(storage, (RDBStorage, _CachedStorage)):
             # TODO(ytsmiling) Fix RDBStorage so that it does not reuse study_id.
             assert len({study_id, study_id2, study_id3}) == 3
         summaries = storage.get_all_study_summaries()
