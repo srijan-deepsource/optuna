@@ -826,7 +826,7 @@ def test_get_n_trials(storage_mode: str) -> None:
 
     with StorageSupplier(storage_mode) as storage:
         study_id_to_summaries, _ = _setup_studies(storage, n_study=2, n_trial=7, seed=50)
-        for study_id in study_id_to_summaries.keys():
+        for study_id in study_id_to_summaries:
             assert storage.get_n_trials(study_id) == 7
 
         non_existent_study_id = max(study_id_to_summaries.keys()) + 1
