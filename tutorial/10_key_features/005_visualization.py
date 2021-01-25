@@ -25,6 +25,7 @@ from optuna.visualization import plot_parallel_coordinate
 from optuna.visualization import plot_param_importances
 from optuna.visualization import plot_slice
 
+
 SEED = 42
 
 np.random.seed(SEED)
